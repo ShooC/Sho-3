@@ -11,8 +11,8 @@ handler.all = async function (m) {
     await this.sendBut(m.chat, `
 Hello, ${ucapan()}
 ╭───────────────╮
-        My name Most Device
-        Salah satu Bot diwhatsapp
+        Saya Slime Bot
+        Salah satu Bot di whatsapp
 ╰───────────────╯
 Hello user budayakan tidak spam bot
 Bot akan aktif 24jam jika kalian donasi
