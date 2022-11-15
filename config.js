@@ -47,7 +47,7 @@ global.dpdf = 'application/pdf'
 global.drtf = 'text/rtf'
 global.djson = 'application/json'
 
-global.thumbdoc = 'https://a.uguu.se/sqNrNOxk.png
+global.thumbdoc = 'https://a.uguu.se/sqNrNOxk.png'
 
 // FAKE SIZE
 global.fsizedoc = '99999999999999' // default 10TB
