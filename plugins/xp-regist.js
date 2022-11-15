@@ -6,7 +6,7 @@ const { createHash } = require('crypto')
 let Reg = /(.*)([.|])([0-9]*)$/i
 let handler = async function (m, { text, usedPrefix }) {
   let user = global.db.data.users[m.sender]
-  let krizyn = 'https://telegra.ph/file/5a7a82e7c656d7d51f2e6.jpg'
+  let krizyn = 'https://a.uguu.se/RAGObgDG.png'
   let uname = conn.getName(m.sender)
   let totalreg = Object.keys(global.db.data.users).length
   if (user.registered === true) throw `Anda sudah terdaftar\nMau daftar ulang? ${usedPrefix}unreg <SN|SERIAL NUMBER>`
@@ -15,8 +15,8 @@ let handler = async function (m, { text, usedPrefix }) {
   if (!name) throw 'Nama tidak boleh kosong (Alphanumeric)'
   if (!age) throw 'Umur tidak boleh kosong (Angka)'
   age = parseInt(age)
-  if (age > 90) throw 'Umur terlalu tua, bapak ngapain main hp? 😒'
-  if (age < 3) throw 'Bayi bisa ngetik, mau gw block? 😖'
+  if (age > 90) throw 'Umur terlalu tua'
+  if (age < 3) throw 'Bayi bisa ngetik'
   user.name = name
   user.age = parseInt(age)
   user.regTime = + new Date
@@ -35,10 +35,14 @@ let handler = async function (m, { text, usedPrefix }) {
 ├❏ SN : ${sn}
 ├❏ Total : ${totalreg} User
 ╰─────────────────╯
+
+❍ Rules Bot
+Jangan spam
+Jangan terlalu sering menggunakan bot
 Gunakan Bot Secukupnya
 Dont Call/Vc Bot 
 `.trim())
-u = '╭─❒ 〔 HALLO NEW PREN 〕\n\n❍ Jika mau ke Pengaturan Bot Klik Tombol "Rules Bot"\n❍ Jika menuju menu Klik tombol "Command"\n❍ Jika mau cari owner Klik tombol "Owner"\n\nPatuhi Rules nya,demi kenyamanan kita bersama.'
+u = '╭─❒ 〔 HALLO KAK 〕\n\n❍ Jika mau ke Pengaturan Bot Klik Tombol "Rules Bot"\n❍ Jika menuju menu Klik tombol "Command"\n❍ Jika mau cari owner Klik tombol "Owner"\n\nPatuhi Rules nya,demi kenyamanan kita bersama.'
 await conn.send3ButtonImg(m.chat, krizyn, u, wm, 'Donasi', '#donasi', 'Menu', '#menu', 'Owner', '#owner',  ftroli)
 }
 handler.help = ['daftar', 'reg'].map(v => v + ' <nama>.<umur>')
