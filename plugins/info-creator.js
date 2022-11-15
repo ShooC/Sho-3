@@ -26,35 +26,37 @@ let handler = async (m, {conn}) => {
 const vcard = `BEGIN:VCARD
 VERSION:3.0
 N:;;;
-FN: ᯤ Sho
-item.ORG: ᴅᴇᴠᴇʟᴏᴩᴇʀ ʙᴏᴛ
-item1.TEL;waid=6285607831412:6285607831412@s.whatsapp.net
-item1.X-ABLabel: Nomor Creator Bot
-item2.EMAIL;type=INTERNET: shoo@gmail.com
+FN: Sho👑
+item.ORG: Dev Bot
+item1.TEL;waid=6282146218274:6282146218274@s.whatsapp.net
+item1.X-ABLabel: ᴅᴇᴠᴇʟᴏᴩᴇʀ ʙᴏᴛ
+item2.EMAIL;type=INTERNET: Riellganzz5@gmail.com
 item2.X-ABLabel:📫 Gmail
-item3.ADR:;;📍 Bekasi - Indonesian;;;;
+item3.ADR:;;📍 Wee - Webtoon;;;;
 item3.X-ABADR:ac
 item3.X-ABLabel:📮 Location Owner
-item4.URL:https://youtube.co
+item4.URL:https://www.youtube.com/@Shoo_C
 item4.X-ABLabel:Youtube
-item5.URL:https//github.com
+item5.URL:https://github.com
 item5.X-ABLabel:Github
-item6.URL:https//instagram.com
+item6.URL:https://instagram.com
 item6.X-ABLabel:Instagram
-item7.URL:https://nekopoi.care
-item7.X-ABLabel:Website
+item7.URL:http://Instagram.com
+item7.X-ABLabel: Instagram²
+item1.TEL;waid=6285607831412:6285607831412@s.whatsapp.net
+item1.X-ABLabel: Creator Bot
 END:VCARD`
 const sentMsg  = await conn.sendMessage(
     m.chat,
     { 
         contacts: { 
-            displayName: 'OWNER BOT', 
+            displayName: 'Creator', 
             contacts: [{ vcard }]  
         }
     }
 )
-let krizyn = 'https://a.uguu.se/XbnfGVop.png'
-await conn.send3ButtonImg(m.chat, hanz, `${ucapan()}\n\nHallo mypren, @${m.sender.split`@`[0]} 👋\nIni nomor owner bot nya\nJika ada kepentingan, chat owner\n\n⫹⫺ Tanggal : *${week} ${date}*\n⫹⫺ Waktu : *${wib}*`, wm3, 'Source', '.sc', 'Menu', '.menu', 'Donasi', '.donasi', sentMsg)}
+let jarot = 'https://telegra.ph/file/b2328ad586427d2e8f7f3.jpg'
+await conn.send3ButtonImg(m.chat, hanz, `${ucapan()}\n\nHallo kak, @${m.sender.split`@`[0]} 👋\nIni nomor owner botnya, jangan di spam ya\nKalau mau disave syarat nya harus pakai profile Sendiri\nKalau gak ada profile gak bakalan direspon\nJika penting langsung chat Owner\n\n⫹⫺ Tanggal : *${week} ${date}*\n⫹⫺ Waktu : *${wib}*`, wm, 'Menu', '.menu', 'Donasi', '.donasi', sentMsg)}
 handler.help = ['owner']
 handler.tags = ['info']
 handler.command = /^(owner|creator)$/i
@@ -71,16 +73,16 @@ function ucapan() {
   const time = moment.tz('Asia/Jakarta').format('HH')
   res = "⊙─❲ *SELAMAT DINIHARI* ❳"
   if (time >= 4) {
-    res = "⊙─❲ *SELAMAT PAGI* ❳"
+    res = "⊙─❲ *SELAMAT PAGI 🌅* ❳"
   }
   if (time > 10) {
-    res = "⊙─❲ *SELAMAT SIANG* ❳"
+    res = "⊙─❲ *SELAMAT SIANG ⛅* ❳"
   }
   if (time >= 15) {
-    res = "⊙─❲ *SELAMAT SORE* ❳"
+    res = "⊙─❲ *SELAMAT SORE 🌄* ❳"
   }
   if (time >= 18) {
-    res = "⊙─❲ *SELAMAT MALAM* ❳"
+    res = "⊙─❲ *SELAMAT MALAM 🌃* ❳"
   }
   return res
 }
