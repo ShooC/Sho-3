@@ -15,20 +15,20 @@ let ehe = `┌─── 〔 D O N A S I 〕 ───
 
 Kalian bisa mendukung bot ini dengan cara 
 
-┌〔 PAYMANT 〕
-├📌 Dana : ${d}
-├📌 Pulsa : ${p}
-├📌 ovo : ${o}
-├📌 Gopay : ${g}
-├📌 Shopay : ${s}
+┌〔 Payment List 〕
+├💸 Dana : ${d}
+├🪙 Pulsa : ${p}
+├💸 ovo : ${o}
+├💸 Gopay : ${g}
+├💸 Shopay : ${s}
 └────
-Berapapun donasi kalian akan sangat berarti 👍
+Berapapun donasi kalian akan sangat berarti
 
 Arigatou!
 
 Contact person Owner:
- ࿑ Owner wa.me/62885770190255 ( pemilik bot )`
-  conn.sendButtonImg(m.chat, fotonya1, ehe, wm, 'Owner', '.owner', m) 
+ ࿑ Owner #owner `
+  conn.sendButtonImg(m.chat, fotonya1, ehe, wm, 'Creator', '.owner', m) 
 }
 handler.help = ['donasi']
 handler.tags = ['info']
