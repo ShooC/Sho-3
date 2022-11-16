@@ -34,17 +34,17 @@ let d = new Date(new Date + 3600000)
    
     let inpo = `
 ╭─❒〘 *I N F O B O T* 〙
-├◌ *Creator* : ${global.naown}
+├◌ *Pembuat* : ${global.naown}
 ├◌ *Api* : wa.me/${global.owner[0]}
 ├◌ *Name Bot* : ${global.namebot}
 ├◌ *Api* : wa.me/${global.nobot[0]}
 ╰─❒
 
 ╭─❒〘 *I N F O  D A T A* 〙
-├◌ *Version* : 4.4.1
+├◌ *Versi* : Offical
 ├◌ *Library* : Baileys-MD
 ├◌ *Language* : JavaScript
-├◌ *Database* : MongoDB
+├◌ *Database* : Unknown
 ╰─❒
 
 ╭─❒〘 *T O D A Y* 〙
@@ -54,7 +54,7 @@ let d = new Date(new Date + 3600000)
 ╰─❒
 
 ╭─❒〘 *S T A T U S  B O T* 〙
-├◌ *Register* : ${rtotalreg} User
+├◌ *Terdaftar* : ${rtotalreg} User
 ├◌ *Prefix* : [ Multi Prefix ]
 ├◌ *Mode* : ${global.opts['self'] ? 'Self' : 'public'}
 ├◌ *User* : ${Object.keys(global.db.data.users).length} User
@@ -64,19 +64,18 @@ let d = new Date(new Date + 3600000)
 
     const sections = [
    {
-	title: `INFORMATION ✦-------`,
+	title: `Informasi ✦-------`,
 	rows: [
-	    {title: "📌 STATUS BOT", rowId: '.statusbot'},
-	    {title: "📌 SPEED", rowId: '.ping'},
-	{title: "📌 SEWA", rowId: '.sewa'},
-	{title: "📌 DONASI", rowId: '.donasi'},
-	{title: "📌 MENU", rowId: '.menu'},
+	    {title: "🤖 STATUS BOT", rowId: '.statusbot'},
+	    {title: "⚡ SPEED", rowId: '.ping'},
+	{title: "💸 DONASI", rowId: '.donasi'},
+	{title: "🎲 MENU", rowId: '.menu'},
   ]},]
   const listMessage = {
   text: ehe,
   footer: inpo,
   title: '',
-  buttonText: "Click Here",
+  buttonText: "Klik disini",
   sections
 }
 await conn.sendMessage(m.chat, listMessage, { quoted: m })
@@ -96,18 +95,18 @@ function clockString(ms) {
 }
 function ucapan() {
   const time = (new Date().getUTCHours() + 7) % 24
-  res = "Simple Bot Whatsapp"
+  res = "Slime Bot"
   if (time >= 4) {
-      res = "Simple Bot Whatsapp"
+      res = "Slime Bot Whatsapp"
   }
   if (time >= 12) {
-      res = "Simple Bot Whatsapp"
+      res = "Slime Bot By Sho"
   }
   if (time >= 15) {
-      res = "Simple Bot Whatsapp"
+      res = "Simple Bot By Sho"
   }
   if (time >= 19) {
-      res = "Simple Bot Whatsapp"
+      res = "⛱️ Slime Bot"
   }
   return res
 
