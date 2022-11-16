@@ -1,89 +1,73 @@
-const { default: makeWASocket, BufferJSON, WA_DEFAULT_EPHEMERAL, generateWAMessageFromContent, downloadContentFromMessage, downloadHistory, proto, getMessage, generateWAMessageContent, prepareWAMessageMedia } = require('@adiwajshing/baileys')
-const { servers, yta, ytv } = require('../lib/y2mate')
-let fs = require('fs')
-let yts = require('yt-search')
-let fetch = require('node-fetch')
+const { youtubeSearch, youtubedl, youtubedlv2, youtubedlv3 } =require('@bochilteam/scraper')
 let handler = async (m, { conn, command, text, usedPrefix }) => {
-  if (!text) throw `uhm.. cari apa?\n\ncontoh:\n${usedPrefix + command} phonk`
-  let chat = global.db.data.chats[m.chat]
-  let results = await yts(text)
-  let vid = results.all.find(video => video.seconds < 3600)
-  if (!vid) throw 'Konten Tidak ditemukan'
-  let isVideo = /2$/.test(command)
-  let yt = false
-  let yt2 = false
-  let usedServer = servers[0]
-  for (let i in servers) {
-    let server = servers[i]
-    try {
-      yt = await yta(vid.url, server)
-      yt2 = await ytv(vid.url, server)
-      usedServer = server
-      break
-    } catch (e) {
-      m.reply(`Server ${server} error!${servers.length >= i + 1 ? '' : '\nmencoba server lain...'}`)
-    }
+  if (!text) throw `Use example ${usedPrefix}${command} naruto blue bird`
+  await m.reply('wait')
+  let vid = (await youtubeSearch(text)).video[0]
+  if (!vid) throw 'Tidak di temukan, coba untuk membalikkan judul dan author nya'
+  let { title, description, thumbnail, videoId, durationH, viewH, publishedTime } = vid
+  const url = 'https://www.youtube.com/watch?v=' + videoId
+
+  let captvid = `╭──── 〔 Y O U T U B E 〕 ─⬣
+⬡ Judul: ${title}
+⬡ Durasi: ${durationH}
+⬡ Views: ${viewH}
+⬡ Upload: ${publishedTime}
+⬡ Link: ${vid.url}
+╰────────⬣`
+  conn.sendButtonLoc(m.chat, `╭──── 〔 Y O U T U B E 〕 ─⬣
+⬡ Judul: ${title}
+⬡ Durasi: ${durationH}
+⬡ Views: ${viewH}
+⬡ Upload: ${publishedTime}
+⬡ Link: ${vid.url}
+╰────────⬣`, author.trim(), await( await conn.getFile(thumbnail)).data, ['⛱️Video', `${usedPrefix}getvid ${url} 360`], false, { quoted: m, 'document': { 'url':'https://wa.me/12522518391' },
+'mimetype': global.dpdf,
+'fileName': `Play music 🎶`,
+'fileLength': 666666666666666,
+'pageCount': 666,contextInfo: { externalAdReply: { showAdAttribution: true,
+mediaType:  2,
+mediaUrl: `${url}`,
+title: `Audio Sedang Dikirim...`,
+body: wm,
+sourceUrl: 'http://nekopoi.care', thumbnail: await ( await conn.getFile(thumbnail)).data
   }
-  if (yt === false) throw 'semua server gagal'
-  if (yt2 === false) throw 'semua server gagal'
-  let { dl_link, thumb, title, filesize, filesizeF } = yt
-let anu =  `╭───〔 Youtube Download 〕──⬣
-⫹⫺ *Judul:* ${title}
-⫹⫺ *Ukuran File Audio:* ${filesizeF}
-⫹⫺ *Ukuran File Video:* ${yt2.filesizeF}
-⫹⫺ *Server y2mate:* ${usedServer}
-⫹⫺ *Link Sumber:* ${vid.url}
-╰──────────⬣`
-     let message = await prepareWAMessageMedia({ image: await (await require('node-fetch')(thumb)).buffer()}, { upload: conn.waUploadToServer }) 
-      const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
-      templateMessage: {
-          hydratedTemplate: {
-            imageMessage: message.imageMessage, 
-            hydratedContentText: anu,
-            hydratedFooterText: wm, 
-            hydratedButtons: [{
-             urlButton: {
-               displayText: 'Join Sini',
-               url: 'https://chat.whatsapp.com/G0ZPtvZHk0lFJxU5qDpeR4'
-             }
+ } 
+})
+  
+  //let buttons = [{ buttonText: { displayText: '📽VIDEO' }, buttonId: `${usedPrefix}ytv ${url} 360` }]
+ //let msg = await conn.sendMessage(m.chat, { image: { url: thumbnail }, caption: captvid, footer: author, buttons }, { quoted: m })
 
-           },
-              {
-             quickReplyButton: {
-               displayText: '🎶 Audio',
-               id: `.ytmp3 ${vid.url}`,
-             }
+  const yt = await await youtubedlv2(url).catch(async _ => await youtubedl(url)).catch(async _ => await youtubedlv3(url))
+const link = await yt.audio['128kbps'].download()
+  let doc = { 
+  audio: 
+  { 
+    url: link 
+}, 
+mimetype: 'audio/mp4', fileName: `${title}`, contextInfo: { externalAdReply: { showAdAttribution: true,
+mediaType:  2,
+mediaUrl: url,
+title: title,
+body: wm,
+sourceUrl: url,
+thumbnail: await(await conn.getFile(thumbnail)).data                                                                     
+                                                                                                                 }
+                       }
+  }
 
-            },
-               {
-             quickReplyButton: {
-               displayText: '📽 Video',
-               id: `.ytmp4 ${vid.url}`,
-             }
-
-            },
-               {
-             quickReplyButton: {
-               displayText: '🔎 Search',
-               id: `.yts ${vid.url}`,
-             }
-
-           }]
-         }
-       }
-     }), { userJid: m.sender, quoted: m });
-    //conn.reply(m.chat, text.trim(), m)
-    return await conn.relayMessage(
-         m.chat,
-         template.message,
-         { messageId: template.key.id }
-     )
+  return conn.sendMessage(m.chat, doc, { quoted: m })
+	// return conn.sendMessage(m.chat, { document: { url: link }, mimetype: 'audio/mpeg', fileName: `${title}.mp3`}, { quoted: m})
+	// return await conn.sendFile(m.chat, link, title + '.mp3', '', m, false, { asDocument: true })
 }
 handler.help = ['play'].map(v => v + ' <pencarian>')
 handler.tags = ['downloader']
-handler.command = /^(p|play)$/i
+handler.command = /^play$/i
 
 handler.exp = 0
+handler.limit = true
 
 module.exports = handler
 
+function pickRandom(list) {
+  return list[Math.floor(list.length * Math.random())]
+}
