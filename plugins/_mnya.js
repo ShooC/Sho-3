@@ -51,9 +51,9 @@ let tags = {
 //━━━━━━━━[ DEFAULT MENU ]━━━━━━━━//
 const defaultMenu = {
   before: `%readmore`.trimStart(), 
-  header: '%bhki *%category* %bhka',
-  body: '%bdy %cmd %islimit %isPremium',
-  footer: '%ftb', 
+  header: '─➣┈──┈──┈──┈──┈─┈──┈╖\n║           ◊ %category◊\n┇┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅',
+  body: '┇   ⿴⃟۪۪⃕᎒⃟   %cmd %isPremium %islimit\n┇',
+  footer: '╙─┈──┈──┈──┈──┈─┈──➣─╜', 
   after: `
 %admen
 `,
@@ -155,7 +155,7 @@ const fkontak = {
     "participants":"0@s.whatsapp.net",
 		"remoteJid": "status@broadcast",
 		"fromMe": false,
-		"id": "Hai Kak"
+		"id": "Hai 🎲"
 	},
 	"message": {
 		"contactMessage": {
@@ -272,7 +272,7 @@ ${readMore}`
 // Krizyn Baik budi ini button Doc ADS
 //const _0x5313da=_0x5833;(function(_0x260e43,_0x257ab4){const _0x503b1e=_0x5833,_0xd87a13=_0x260e43();while(!![]){try{const _0x3c8b40=parseInt(_0x503b1e(0x1da))/0x1*(parseInt(_0x503b1e(0x1c9))/0x2)+-parseInt(_0x503b1e(0x1ca))/0x3*(-parseInt(_0x503b1e(0x1cb))/0x4)+parseInt(_0x503b1e(0x1d1))/0x5+-parseInt(_0x503b1e(0x1ce))/0x6*(parseInt(_0x503b1e(0x1d3))/0x7)+-parseInt(_0x503b1e(0x1d9))/0x8*(-parseInt(_0x503b1e(0x1d4))/0x9)+parseInt(_0x503b1e(0x1d7))/0xa+-parseInt(_0x503b1e(0x1d2))/0xb;if(_0x3c8b40===_0x257ab4)break;else _0xd87a13['push'](_0xd87a13['shift']());}catch(_0x2e86ae){_0xd87a13['push'](_0xd87a13['shift']());}}}(_0xac0b,0x9a270));const buttonMessage={'document':{'url':gc},'mimetype':global[_0x5313da(0x1cc)],'fileName':''+ucapan(),'fileLength':fsizedoc,'pageCount':fpagedoc,'contextInfo':{'forwardingScore':0x22b,'isForwarded':![],'externalAdReply':{'showAdAttribution':!![],'mediaUrl':global['instagram'],'mediaType':0x2,'previewType':_0x5313da(0x1d6),'title':tb,'body':wm2,'thumbnail':await(await fetch(media))[_0x5313da(0x1c8)](),'sourceUrl':gc}},'caption':text,'footer':wm,'buttons':[{'buttonId':'.donasi','buttonText':{'displayText':_0x5313da(0x1cd)},'type':0x1},{'buttonId':_0x5313da(0x1cf),'buttonText':{'displayText':_0x5313da(0x1d5)},'type':0x1}],'headerType':0x6};function _0x5833(_0x2462fe,_0x5b86f1){const _0xac0b7e=_0xac0b();return _0x5833=function(_0x58334e,_0xde8e5d){_0x58334e=_0x58334e-0x1c8;let _0x19f059=_0xac0b7e[_0x58334e];return _0x19f059;},_0x5833(_0x2462fe,_0x5b86f1);}await conn[_0x5313da(0x1d0)](m[_0x5313da(0x1d8)],buttonMessage,{'quoted':m});function _0xac0b(){const _0x146b4b=['42FVQhCm','3YOVjEg','4001436ZAnWDJ','ddocx','Donasi','150gycguR','.owner','sendMessage','3334420XygTyH','32703748UQMNeS','6713HuAlrz','13410KnLwWm','Owner','pdf','10421530PjPRjj','chat','80dZDWSf','43055rzNNec','buffer'];_0xac0b=function(){return _0x146b4b;};return _0xac0b();}
 	
-conn.reply(m.chat, `*🇱🇷 Play bots wisely*\n*🇲🇨 Bermain bot dengan bijak*\n*🇯🇵 ボットを賢くプレイする*`, ftroli)
+conn.reply(m.chat, `*🇱🇷 Play bots wisely*\n*🇲🇨 Bermain bot dengan bijak*\n*🇯🇵 ボットを賢くプレイする*\n🇰🇷 현명하게 봇 플레이`, ftroli)
 await conn.send2ButtonLoc(m.chat, imgloc, mnya, text.trim(), `Donation`, `${_p}donasi`, `Creator`, `${_p}owner`, m)
  await conn.sendFile(m.chat, hy, 'menu.mp3', null, fkontak, true, {
 type: 'audioMessage', // paksa tanpa convert di ffmpeg
