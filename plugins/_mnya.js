@@ -51,9 +51,9 @@ let tags = {
 //━━━━━━━━[ DEFAULT MENU ]━━━━━━━━//
 const defaultMenu = {
   before: `%readmore`.trimStart(), 
-  header: '─➣┈──┈──┈──┈──┈─┈──┈╖\n║           ◊ %category◊\n┇┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅',
-  body: '┇   ⿴⃟۪۪⃕᎒⃟   %cmd %isPremium %islimit\n┇',
-  footer: '╙─┈──┈──┈──┈──┈─┈──➣─╜', 
+  header: '╓─┈──┈≻「 %category 」',
+  body: '┆  ➦ %cmd %isPremium %islimit',
+  footer: '╙─┈──┈──┈──┈──┈─┈', 
   after: `
 %admen
 `,
