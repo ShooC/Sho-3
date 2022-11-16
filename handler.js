@@ -714,7 +714,7 @@ module.exports = {
                         } finally {
                             text = (action === 'add' ? (chat.sWelcome || this.welcome || conn.welcome || 'Yah,si Beban Masuk Grup @user').replace('@subject', groupMetadata.subject).replace('@desc', groupMetadata.desc.toString()) :
                                 (chat.sBye || this.bye || conn.bye || 'Sip, Beban Berkurang @user!')).replace('@user', '@' + user.split('@')[0]).replace('@subject', groupMetadata.subject)
-                                this.send2ButtonImg(id, pp, text, wm3, "Menu Bit", ".menu", "Intro for new memb", "intro", null)
+                                this.send2ButtonImg(id, pp, text, wm3, "Menu Bot", ".menu", "Intro for new memb", "intro", null)
                                 }
                     }
                 }
