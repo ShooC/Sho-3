@@ -208,7 +208,7 @@ let mnya = `     「 Slime Bot 」
 
 ❍⃕  I N F O  U S E R
 ✗ Name : ${name}
-✗ Status : ${global.prem ? 'Premium' : 'Free'}
+✗ Status : ${global.prem ? 'Premium' : 'Gratisan'}
 ✗ Limit : ${limit}
 ✗ Money : ${money}
 ✗ Role : ${role}
@@ -283,7 +283,7 @@ contextInfo: {
  	     sourceUrl: `${pickRandom([`https://chat.whatsapp.com/G0ZPtvZHk0lFJxU5qDpeR4`, `tiktok.com/@itsshooc`])}`,
            title: `${ucapan()}`,  
             body: wm3, 
-           thumbnail: await (await fetch(`${pickRandom(['https://telegra.ph/file/6aab3b754c2aa61dc506f.jpg', 'https://telegra.ph/file/33edaf10141864c2a4e5c.jpg', 'https://telegra.ph/file/afecfcef05942ab01ce33.jpg'])}`)).buffer()
+           thumbnail: await (await fetch(`${pickRandom(['https://telegra.ph/file/e2fd6875a41cce1700198.jpg', 'https://telegra.ph/file/f54ecc7b4ce7b0d430863.jpg'])}`)).buffer()
 }
      }
 })
