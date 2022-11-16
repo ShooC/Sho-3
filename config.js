@@ -33,7 +33,7 @@ global.ppreg = 'https://a.uguu.se/RAGObgDG.png'
 global.fotonya1 = 'https://a.uguu.se/dkcwDhnc.png' //ganti jadi foto bot mu
 global.fotonya2 = 'https://a.uguu.se/dkcwDhnc.png' //ini juga ganti 
 global.ppacc = 'https://telegra.ph/file/a077271ff372545599dbc.jpg'
-global.imgloc = 'https://telegra.ph/file/e6355ade20840c96814ed.jpg'
+global.imgloc = 'https://telegra.ph/file/4be74429ff4550c0d7170.jpg'
 global.media = 'https://a.uguu.se/WXBwPNyB.png'
 global.ppm = 'https://a.uguu.se/WXBwPNyB.png'  // bagian atas all command
 
