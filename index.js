@@ -23,6 +23,9 @@ var isRunning = false
  * Start a js file
  * @param {String} file `path/to/file`
  */
+require("http").createServer((_, res) =>
+ res.end("Uptime!")).listen(8080)
+
 function start(file) {
   if (isRunning) return
   isRunning = true
