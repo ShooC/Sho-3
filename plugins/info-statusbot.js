@@ -55,16 +55,16 @@ let handler = async (m, {
         let _ramTotal = (ramTotal + ' MB')
         let neww = performance.now()
      conn.reply(m.chat, `
-┏━━〔 *STATUS BOT* 〕━⌲
+┏━━〔 *Status Bot* 〕━⌲
 ◎ OS: *${OS}*
 ◎ CPU Model: *${cpuModel}*
 ◎ CPU Core: *${cpuCore} Core*
 ◎ CPU: *${cpuPer}%*
-◎ Ram: *${ramUsed} / ${_ramTotal}(${/[0-9.+/]/g.test(ramUsed) &&  /[0-9.+/]/g.test(ramTotal) ? Math.round(100 * (ramUsed / ramTotal)) + '%' : NotDetect})*
+◎ Ram: *${ramUsed} / ${_ramTotal}(${/[0-9.+/]/g.test(ramUsed) &&  /[0-9.+/]/g.test(ramTotal) ? Math.round(100 * (ramUsed / ramTotal)) + '%' : TidakTerdeteksi})*
 ◎ Drive: *${driveUsed} / ${driveTotal} (${drivePer})*
 ◎ Ping: *${Math.round(neww - old)} ms*
-◎ Internet IN: *${netsIn}*
-◎ Internet OUT: *${netsOut}*
+◎ Internet In: *${netsIn}*
+◎ Internet Out: *${netsOut}*
 ┗━━━━━━━━━━━━━⌲
 `.trim(), m)
         console.log(OS)
