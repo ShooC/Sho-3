@@ -41,8 +41,8 @@ module.exports = {
                     if (!isNumber(user.troopcamp)) user.troopcamp = 0
                     if (!isNumber(user.coin)) user.coin = 0
                     if (!isNumber(user.atm)) user.atm = 0
-                    if (!isNumber(user.limit)) user.limit = 50
-                    if (!isNumber(user.glimit)) user.glimit = 50
+                    if (!isNumber(user.limit)) user.limit = 15
+                    if (!isNumber(user.glimit)) user.glimit = 15
                     if (!isNumber(user.tprem)) user.tprem = 0
                     if (!isNumber(user.tigame)) user.tigame = 50
                     if (!isNumber(user.lastclaim)) user.lastclaim = 0
@@ -264,7 +264,7 @@ module.exports = {
                     exp: 0,
                     coin: 0,
                     atm: 0,
-                    limit: 50,
+                    limit: 15,
                     tigame: 50,
                     lastclaim: 0,
                     money: 0,
@@ -589,11 +589,11 @@ module.exports = {
                     if (xp > 200) m.reply('Ngecit -_-') // Hehehe
                     else m.exp += xp
                     if (!isPrems && plugin.limit && global.db.data.users[m.sender].limit < plugin.limit * 1) {
-                        this.reply(m.chat, `💌 Limit anda habis, silahkan beli melalui *${usedPrefix}buy*`, m)
+                        this.reply(m.chat, `Limit anda habis, silahkan beli melalui *${usedPrefix}buy*`, m)
                         continue // Limit habis
                     }
                     if (plugin.level > _user.level) {
-                        this.reply(m.chat, `💌 diperlukan level ${plugin.level} untuk menggunakan perintah ini. Level kamu ${_user.level}`, m)
+                        this.reply(m.chat, `diperlukan level ${plugin.level} untuk menggunakan perintah ini. Level kamu ${_user.level}`, m)
                         continue // If the level has not been reached
                     }
                     let extra = {
@@ -631,7 +631,7 @@ module.exports = {
                             for (let jid of global.owner.map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').filter(v => v != this.user.jid)) {
                                 let data = (await this.onWhatsApp(jid))[0] || {}
                                 if (data.exists)
-                                    m.reply(`${hki} MESSAGE EROR ${hka}\n\n📑 *Plugin :* ${m.plugin}\n💬 *Sender :* @${m.sender.split`@`[0]}\n🗯 *Chat:* ${m.chat}\n💌 *Chat Name:* ${await this.getName(m.chat)}\n🚨 *Command :* ${usedPrefix}${command} ${args.join(' ')}\n\n\`\`\`${text}\`\`\``.trim(), data.jid, { mentions: [m.sender] })
+                                    m.reply(`${hki} NiuNiuNiu ${hka}\n\n📌 *Plugin :* ${m.plugin}\n📮 *Sender :* @${m.sender.split`@`[0]}\n🗯 *Chat:* ${m.chat}\n📜 *Chat Name:* ${await this.getName(m.chat)}\n🚨 *Command :* ${usedPrefix}${command} ${args.join(' ')}\n\n\`\`\`${text}\`\`\``.trim(), data.jid, { mentions: [m.sender] })
                             } // JIKA RISIH MATIIN AJA
                             m.reply(text)
                         }
@@ -644,7 +644,7 @@ module.exports = {
                                 console.error(e)
                             }
                         }
-                        if (m.limit) m.reply(+ m.limit + ' 💌 Limit sudah terpakai')
+                        /*if (m.limit) m.reply(+ m.limit + 'Limit sudah terpakai')*/
                     }
                     break
                 }
@@ -714,7 +714,7 @@ module.exports = {
                         } finally {
                             text = (action === 'add' ? (chat.sWelcome || this.welcome || conn.welcome || 'Yah,si Beban Masuk Grup @user').replace('@subject', groupMetadata.subject).replace('@desc', groupMetadata.desc.toString()) :
                                 (chat.sBye || this.bye || conn.bye || 'Sip, Beban Berkurang @user!')).replace('@user', '@' + user.split('@')[0]).replace('@subject', groupMetadata.subject)
-                                this.send2ButtonImg(id, pp, text, wm3, "⎙ Menu", ".menu", "⎙ Intro", "intro", null)
+                                this.send2ButtonImg(id, pp, text, wm3, "Menu Bit", ".menu", "Intro for new memb", "intro", null)
                                 }
                     }
                 }
@@ -784,15 +784,15 @@ global.dfail = (type, m, conn) => {
 let name = conn.getName(m.sender)
  //let ppacc = global.ppacc
   let msg = {
-        rowner: '*🇺🇲 SORRY ONLY DEVELOPER*\n🇲🇨 COMMAND INI HANYA UNTUK DEVELOPER',
-        owner: '*🇺🇲 SORRY ONLY OWNER*\n🇲🇨 COMMAND INI HANYA UNTUK OWNER',
-        mods: '*🇺🇲  SORRY ONLY MODERATOR*\n🇲🇨 COMMAND INI HANYA UNTUK MODERATOR',
-        premium: '*🇺🇲 SORRY ONLY PREMIUM*\n🇲🇨 COMMAND INI HANYA UNTUK PREMIUM USER',
-        group: '*🇺🇲 SORRY IN GROUP CHAT*\n🇲🇨 COMMAND INI HANYA BISA DIPAKAI DIGROUP',
-        private: '*🇺🇲 SORRY IN PRIVATE CHAT*\n🇲🇨 COMMAND INI HANYA BISA DIPAKAI DIPRIVATE CHAT',
-        admin: '*🇺🇲 SORRY ONLY ADMIN*\n🇲🇨 COMMAND INI HANYA UNTUK ADMIN GROUP',
-        botAdmin: '*🇺🇲 SORRY ONLY BOT ADMIN*\n🇲🇨 COMMAND INI HANYA BISA DIGUNAKAN SETELAH MENJADI ADMIN',
-        restrict: '*🇺🇲 RESTRICT OFF IN CHAT*\n🇲🇨 RESTRICT BELUM DINYALAKAN DICHAT INI'
+        rowner: '*🇺🇲 SORRY ONLY DEVELOPER*\n🇲🇨 COMMAND INI HANYA UNTUK DEVELOPER\n🇯🇵 このコマンドは開発者専用です',
+        owner: '*🇺🇲 SORRY ONLY OWNER*\n🇲🇨 COMMAND INI HANYA UNTUK OWNER\n🇯🇵 このコマンドは所有者専用です',
+        mods: '*🇺🇲  SORRY ONLY MODERATOR*\n🇲🇨 COMMAND INI HANYA UNTUK MODERATOR\n🇯🇵 このコマンドはモデレーター専用です',
+        premium: '*🇺🇲 SORRY ONLY PREMIUM*\n🇲🇨 COMMAND INI HANYA UNTUK PREMIUM USER\n🇯🇵このコマンドはプレミアム ユーザー専用です',
+        group: '*🇺🇲 SORRY IN GROUP CHAT*\n🇲🇨 COMMAND INI HANYA BISA DIPAKAI DI GROUP\n🇯🇵 このコマンドはグループでのみ使用できます',
+        private: '*🇺🇲 SORRY IN PRIVATE CHAT*\n🇲🇨 COMMAND INI HANYA BISA DIPAKAI DIPRIVATE CHAT\n🇯🇵 このコマンドは、プライベート チャットでのみ使用できます',
+        admin: '*🇺🇲 SORRY ONLY ADMIN*\n🇲🇨 COMMAND INI HANYA UNTUK ADMIN GROUP\n🇯🇵 このコマンドはグループ管理者専用です',
+        botAdmin: '*🇺🇲 SORRY ONLY BOT ADMIN*\n🇲🇨 COMMAND INI HANYA BISA DIGUNAKAN SETELAH MENJADI ADMIN\n🇯🇵 このコマンドは、管理者になった後にのみ使用できます',
+        restrict: '*🇺🇲 RESTRICT OFF IN CHAT*\n🇲🇨 RESTRICT BELUM DINYALAKAN DICHAT INI\n🇯🇵 このチャットでは制限がオンになっていません' 
     }[type]
   let ac = {
       rowner: `Hai kak 👋, @${m.sender.split`@`[0]}`,
@@ -809,16 +809,16 @@ let name = conn.getName(m.sender)
    // conn.sendBut(m.chat, msg, wm3, 'Menu', '.menu', m)
  let unreg = {
   unreg: `┏━━━〔 ıll 𝐔𝐍𝐑𝐄𝐆𝐈𝐒𝐓𝐄𝐑 llı 〕━━㉿
-⬡ Hallo mypren👋, @${m.sender.split`@`[0]}
-⬡ Sebelum melihat fitur bot, lebih baik register dulu
+⬡ Hallo kak👋, @${m.sender.split`@`[0]}
+⬡ Sebelum melihat fitur bot, lebih baik register dulu ya
 ⬡ Kalau tidak kelihatan button nya, contohnya dibawah!
 ┗━━━━━━━━━━━━━━━━━━㉿
-┏━━〔 ıll CONTOH llı 〕━㉿
+┏━━〔 ıll Contoh llı 〕━㉿
 ⬡ #daftar namamu.umurmu
-⬡ #daftar @${m.sender.split`@`[0]}.18
+⬡ #daftar @${m.sender.split`@`[0]}.20
 ┗━━━━━━━━━━㉿ `
   }[type]
-   if (unreg) return conn.sendBut(m.chat, unreg, '📮 Silahkan Klik reg dibawah ini', 'Registrasi', `.reg @${m.sender.split`@`[0]}.18`, m)
+   if (unreg) return conn.sendBut(m.chat, unreg, 'Silahkan Klik reg dibawah ini', 'Register/Login', `.reg @${m.sender.split`@`[0]}.18`, m)
  }
 
 let fs = require('fs')
