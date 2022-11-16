@@ -1,6 +1,7 @@
 let { MessageType } = require('@adiwajshing/baileys')
 const potion = 500
 const Sgold = 3000
+const Blimit = 10000
 const Bgold = 6000
 const Bstring = 500
 const Sstring = 200
@@ -380,6 +381,14 @@ bila sudah tidak ada harganya, berarti sudah tidak bisa dibeli / sudah level max
                                global.db.data.users[m.sender].money -= Biron * count
                                conn.reply(m.chat, `✔️ Sukses Membeli ${count} Iron ⛓️ Dengan Harga ${Biron * count} Money 💹`, m)
                             } else conn.reply(m.chat, `Uang Anda Tidak Cukup`, m)
+                        break
+                  case 'limit':
+                            if (global.db.data.users[m.sender].money >= Blimit * count) {
+                                global.db.data.users[m.sender].limit += count * 1
+                                global.db.data.users[m.sender].money -= Blimit * count
+                                conn.reply(m.chat, `Succes membeli ${count} Limit dengan harga ${Blimit * count} money`, m)
+                            } else conn.reply(m.chat, `Uang anda tidak cukup untuk membeli ${count} limit dengan harga ${Blimit * count} money`.trim(), m)
+                        
                         break
                     case 'common':
                             if (global.db.data.users[m.sender].money >= Bcommon * count) {
