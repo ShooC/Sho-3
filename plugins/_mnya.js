@@ -53,7 +53,7 @@ const defaultMenu = {
   before: `%readmore`.trimStart(), 
   header: '╓─┈──┈≻「 %category 」',
   body: '┆  ➦ %cmd %isPremium %islimit',
-  footer: '╙─┈──┈──┈──┈──┈─┈', 
+  footer: '╙─┈──┈──┈──┈──┈─┈\n\n', 
   after: `
 %admen
 `,
