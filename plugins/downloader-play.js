@@ -1,7 +1,7 @@
 const { youtubeSearch, youtubedl, youtubedlv2, youtubedlv3 } =require('@bochilteam/scraper')
 let handler = async (m, { conn, command, text, usedPrefix }) => {
-  if (!text) throw `Use example ${usedPrefix}${command} naruto blue bird`
-  await m.reply('wait')
+  if (!text) throw `Play Music\n\n Contoh pengunaan:${usedPrefix}${command} selamat tinggal`
+  await m.reply('Loading Kak')
   let vid = (await youtubeSearch(text)).video[0]
   if (!vid) throw 'Tidak di temukan, coba untuk membalikkan judul dan author nya'
   let { title, description, thumbnail, videoId, durationH, viewH, publishedTime } = vid
