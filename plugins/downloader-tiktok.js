@@ -1,20 +1,19 @@
-let fetch = require('node-fetch')
-let handler = async (m, { conn, args }) => {
-if (!args[0]) throw 'Berikan link tiktok'
-m.reply('tunggu')
-let res = await fetch(`https://botcahx.ddns.net/api/dowloader/tikok?url=${args[0]}`)
-if (!res.ok) throw await res.text()
-let json = await res.json()
-if (!json.status) throw json
-let { video, description, username } = json.result
-await conn.sendFile(m.chat, video, 'tiktok.mp4', `
-\n📜 *Deskripsi*: ${description}\n\n👾 *Username*: ${username}\n\n📮 *By*: Slime Bot
-`, m, false, { contextInfo: { forwardingScore: 999, isForwarded: false }})
-}
+var { tiktokdl } = require ('@bochilteam/scraper')
+var wm = '                「 ꜱᴀᴅ BOT あ⁩ 」'
+var handler = async (m, { conn, args, usedPrefix, command }) => {
+if (!args[0]) throw `Use example ${usedPrefix}${command} https://www.tiktok.com/@omagadsus/video/7025456384175017243`
+    var { author: { nickname }, video, description } = await tiktokdl(args[0])
+    var url = video.no_watermark || video.no_watermark2 || video.no_watermark_raw
+    if (!url) throw 'Can\'t download video!'
+    conn.sendFile(m.chat, url, 'tiktok.mp4', `*TIKTOK DOWNLOADER*
+*Nickname:* ${nickname}
+*Description:* ${description}
 
-handler.help = ['tiktok <url>']
+${wm}
+`.trim(), m)
+}
+handler.help = ['tiktok', 'tiktok', 'tiktokdl'].map(v => v + ' <url>')
 handler.tags = ['downloader']
-handler.command = /^(tt|tiktok)$/i
-handler.limit = true
+handler.command = /^(tik(tok)?(tok)?(dl)?)$/i
 
 module.exports = handler
