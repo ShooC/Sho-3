@@ -79,19 +79,20 @@ let handler  = async (m, { conn, command, args, usedPrefix, DevMode }) => {
     let _type = (args[1] || '').toLowerCase()
     let jualbeli = (args[0] || '').toLowerCase()
     const Kchat = `
-*🎒 SHOP*
+*Slime bot shop*
 
-*🧪 Penggunaan :*
+*Penggunaan :*
 _${usedPrefix}shop <Buy|sell> <item> <jumlah>_
 Contoh penggunaan: _*${usedPrefix}shop buy potion 1*_
 
-*📮 Note :* 
+*Note :* 
 bila sudah tidak ada harganya, berarti sudah tidak bisa dibeli / sudah level max
 
-🛍️ List Barang:
+🛍️ List item:
 ━━━━━━━━━━━━━━━━━━━
-*♻ Barang   | 💲 Harga beli*
+*⛱️ Barang   | 💲 Harga beli*
 ━━━━━━━━━━━━━━━━━━━
+*⚡ Limit:* ${Blimit}
 *🥤 Potion:* ${potion}
 *🍶 Aqua:* ${Baqua}
 *🪙  Gold :* ${Bgold}
