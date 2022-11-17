@@ -1,6 +1,6 @@
 let { MessageType } = require('@adiwajshing/baileys')
 let handler  = async (m, { conn, command, args, usedPrefix, DevMode }) =>  {
-	if (!db.data.chats[m.chat].rpg && m.isGroup) throw global.rpg
+	if (!db.data.chats[m.chat].rpg && m.isPrivate) throw global.rpg
     let msgerror = (pickRandom(['Error', 'astagfirullah error', 'Nice Error', 'Salah format keknya :v', 'error bro', 'Kocak error :v', 'wtf error :v', 'Ciaaa error', 'error cuyy', 'dahlah (emot batu) error']))
     try {
         let msgkurang = (pickRandom(['potionmu tidak cukup', 'ciahh gak cukup potion nya', 'wtf gk cukup :v', 'beli potion dulu, potionmu gk cukup', 'Duaarr potionmu gk cukup', 'eyyyy potionmu kurang', 'beli dulu lah, masak mau pakai potion tapi gk ada potionnnya :v', 'minta ke orang lain suruh transfer potion, biar potionmu gk kurang :v', 'Beli potion dulu Bang']))
