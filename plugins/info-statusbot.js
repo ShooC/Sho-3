@@ -80,7 +80,7 @@ let handler = async (m, {
 }
 handler.help = ['statusbot'].map(v => 'status' + v)
 handler.tags = ['info']
-handler.command = /^(bot)?status(bot)?$/i
+handler.command = /^(bot)?status(bot)$/i
 handler.owner = false
 handler.mods = false
 handler.premium = false
