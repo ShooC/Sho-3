@@ -26,7 +26,7 @@ contextInfo: {
          externalAdReply: { 
          showAdAttribution: true,
  	     sourceUrl: `${pickRandom([`https://vt.tiktok.com/ZSRBqB9q1/`, `https://www.instagram.com/itskri99`, `https://youtube.com/hokenbeusz`])}`,
-           title: 'FORYN FOUR ONLINE 🥰',  
+           title: 'Slime Bot sedang online',  
             body: `Ada yang bisa dibantu ?`, 
            thumbnail: await (await fetch(`${pickRandom(['https://telegra.ph/file/8fcbf793da8b937a21237.jpg', 'https://telegra.ph/file/bc8746f21882e9585c79b.jpg', 'https://telegra.ph/file/cf8c6dae68158bc06731d.jpg', 'https://telegra.ph/file/29b9805b4704cda560c9b.jpg'])}`)).buffer()
 }
@@ -36,7 +36,7 @@ contextInfo: {
 /*conn.reply(m.chat, info, m, { quoted: fakes },{ contextInfo: { externalAdReply: { showAdAttribution: true,
       mediaUrl: "https://Instagram.com/itskri99",
       mediaType: 2,
-      description: "https://Instagram.com/itskri99", 
+      description: "nekopoi.care", 
       title: global.titlebot,
       body: wm,
       thumbnail: thumb,
@@ -101,7 +101,7 @@ export default handler*/
              thumbnail: fs.readFileSync('./thumbnail.jpg')  
             }}})*/
 
-handler.customPrefix = /^(forynfour|krizyn|boti|bot|boty)$/i
+handler.customPrefix = /^(slime|slimebot|boti|bot|boty)$/i
 handler.command = new RegExp
 
 module.exports = handler
