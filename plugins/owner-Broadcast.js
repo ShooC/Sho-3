@@ -3,13 +3,13 @@ let handler  = async (m, { conn, text }) => {
   conn.reply(m.chat, `_Mengirim pesan broadcast ke ${chats.length} chat_`, m)
   for (let id of chats) {
        let bcbg = 'https://telegra.ph/file/8942f0369efc1d64b5eb7.jpg'
-       await conn.send2ButtonImg(id, bcbg, text.trim(), wm, 'Menu', '.menu', 'Sewa', '.sewa', m)
+       await conn.send2ButtonImg(id, bcbg, text.trim(), wm, 'Menu', '.menu', 'Owner', '.owner', m)
      }
   m.reply('*Broadcast selesai*')
 }
 handler.help = ['broadcast','bc'].map(v => v + ' <teks>')
 handler.tags = ['owner']
-handler.command = /^(broadcast|bc)$/i
+handler.command = /^(broadcast|bc|bece|bcall)$/i
 handler.owner = true
 handler.mods = false
 handler.premium = false
