@@ -17,8 +17,8 @@ global.nobot = '0'
 //  URL SOSMED
 global.instagram = 'https://instagram.com'
 global.github = 'https://github.com'
-global.gc = 'https://chat.whatsapp.com/G0ZPtvZHk0lFJxU5qDpeR4'
-global.web = 'https://nekopoi.cae' //ubah jadi website lu, bisa link ig, link github, link yt, link.bokep. 
+global.gc = 'https://chat.whatsapp.com/DbETJDJWKOl16OuICDzHyU'
+global.web = 'https://chat.whatsapp.com/DbETJDJWKOl16OuICDzHyU' //ubah jadi website lu, bisa link ig, link github, link yt, link.bokep. 
 global.saweria = 'https://saweria.co'
 
 // PAYMANT 
