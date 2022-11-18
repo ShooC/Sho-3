@@ -22,7 +22,7 @@ conn.reply(test)
     let reason = user.afkReason || ''
     let str = `╭──[ *Jangan Tag Dia!* ]──✧
 ┆ ${reason ? '*Alasan* : ' + reason : 'Tidak ada alasan'}
-┆ *Time* : ${clockString(new Date - afkTime)}
+┆ *Waktu* : ${clockString(new Date - afkTime)}
 ╰┅────★
 `.trim()
 conn.sendBut(m.chat, str, `${wm}`,'Menu Slime Bot', '.menu',m)
