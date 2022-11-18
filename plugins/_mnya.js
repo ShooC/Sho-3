@@ -53,7 +53,7 @@ const defaultMenu = {
   before: `%readmore`.trimStart(), 
   header: '╓─┈──┈≻「 %category 」',
   body: '┆  ➦ %cmd %isPremium %islimit',
-  footer: '╙─┈──┈──┈──┈──┈─┈\n\n', 
+  footer: '╙─┈──┈──┈──┈──┈─┈\n\n${readMore}', 
   after: `
 %admen
 `,
@@ -213,6 +213,16 @@ let mnya = `     「 Slime Bot 」
 ✗ Money : ${money}
 ✗ Role : ${role}
 ✗ Level : ${level}
+
+❍⃕  R U L E S
+JANGAN SPAM
+JANGAN KIRIM VIRTEX/VIRKON DLL
+JANGAN CALL/VC BOT
+
+❍⃕  N O T E
+Bot bebas kalian add ke gc
+Tapi tunggu beberapa menit agar grub
+Agar grub terdaftar di database
 ${readMore}`
 
 	
