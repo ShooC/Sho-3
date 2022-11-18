@@ -8,13 +8,13 @@ let handler = async (m, { conn, isROwner, text }) => {
     m.reply(`⛱️Mengirim Broadcast Ke ${anu.length} Chat, Waktu Selesai ${anu.length * 0.5 } detik`)
     for (let i of anu) {
     await delay(500)
-    conn.send2But(i, `${pesan}`, wm, 'Creator', '.owner', 'Menu', '.menu', null).catch(_ => _)
+    conn.send2But(i, `${pesan}`, wm, 'Creator', '.owner', 'Menu Bot', '.menu', null).catch(_ => _)
     }
   m.reply(`Sukses Mengirim Broadcast Ke ${anu.length} Group`)
 }
 handler.help = ['bcgcbot <teks>']
 handler.tags = ['owner']
-handler.command = /^((broadcastgc|bcgc)bot)$/i
+handler.command = /^((broadcastgc|bcgc|becegece)$/i
 handler.owner = true
 
 module.exports = handler
