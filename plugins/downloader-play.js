@@ -1,6 +1,6 @@
 const { youtubeSearch, youtubedl, youtubedlv2, youtubedlv3 } =require('@bochilteam/scraper')
 let handler = async (m, { conn, command, text, usedPrefix }) => {
-  if (!text) throw `Play Music\n\n Contoh pengunaan:${usedPrefix}${command} selamat tinggal`
+  if (!text) throw `Download audio yt atau play lagu\n\n Contoh pengunaan:${usedPrefix}${command} selamat tinggal\n\nAtau #play (link yt)`
   await m.reply('Loading Kak')
   let vid = (await youtubeSearch(text)).video[0]
   if (!vid) throw 'Tidak di temukan, coba untuk membalikkan judul dan author nya'
@@ -61,7 +61,7 @@ thumbnail: await(await conn.getFile(thumbnail)).data
 }
 handler.help = ['play'].map(v => v + ' <pencarian>')
 handler.tags = ['downloader']
-handler.command = /^play$/i
+handler.command = /^yt(a(udio)?|mp3|musik|lagu|play)$/i
 
 handler.exp = 0
 handler.limit = true
