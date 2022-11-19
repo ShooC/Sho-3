@@ -6,12 +6,14 @@ untuk memperkenalkan diri kamu
 🚀  Nama :
 🚀  Umur :
 🚀  askot :
+[ Kalau Mau ↓ ]
 🚀  spill ig :
 🚀  spill tiktok :
 🚀  Alasan masuk grup :
 ▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰
 Selamat Bergabung Semoga Betah 
 Patuhi Peraturan Di Group ini
+Thank you (≧▽≦)
 ▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰ 
 `}, { quoted: m})
 handler.customPrefix = /^(intro ngab|intro|member baru|new member|intro kak|intro dek)$/i
