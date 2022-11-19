@@ -28,9 +28,9 @@ VERSION:3.0
 N:;;;
 FN: Sho👑
 item.ORG: Dev Bot
-item1.TEL;waid=6282146218274:6282146218274@s.whatsapp.net
+item1.TEL;waid=6285607831412:6285607831412@s.whatsapp.net
 item1.X-ABLabel: ᴅᴇᴠᴇʟᴏᴩᴇʀ ʙᴏᴛ
-item2.EMAIL;type=INTERNET: Riellganzz5@gmail.com
+item2.EMAIL;type=INTERNET: Sho@gmail.com
 item2.X-ABLabel:📫 Gmail
 item3.ADR:;;📍 Wee - Webtoon;;;;
 item3.X-ABADR:ac
@@ -43,7 +43,7 @@ item6.URL:https://instagram.com
 item6.X-ABLabel:Instagram
 item7.URL:http://Instagram.com
 item7.X-ABLabel: Instagram²
-item1.TEL;waid=6285607831412:6285607831412@s.whatsapp.net
+item1.TEL;waid=6285791268077:6285791268077@s.whatsapp.net
 item1.X-ABLabel: Creator Bot
 END:VCARD`
 const sentMsg  = await conn.sendMessage(
