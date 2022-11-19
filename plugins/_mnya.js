@@ -53,7 +53,7 @@ const defaultMenu = {
   before: `%readmore`.trimStart(), 
   header: '╓─┈──┈≻「 %category 」',
   body: '┆  ➦ %cmd %isPremium %islimit',
-  footer: '╙─┈──┈──┈──┈──┈─┈\n\n${readMore}', 
+  footer: '╙─┈──┈──┈──┈──┈─┈\n\n', 
   after: `
 %admen
 `,
@@ -174,7 +174,7 @@ const ftroli = {
     itemCount : 2022,
     status: 1,
     surface : 1,
-    message: `${ucapan()}`, 
+    message: `Dandleion 🥀`, 
     orderTitle: `▮Menu ▸`,
     thumbnail: await (await fetch(media)).buffer(), //Gambarnye
     sellerJid: '0@s.whatsapp.net' 
@@ -215,14 +215,11 @@ let mnya = `     「 Slime Bot 」
 ✗ Level : ${level}
 
 ❍⃕  R U L E S
+
 JANGAN SPAM
 JANGAN KIRIM VIRTEX/VIRKON DLL
 JANGAN CALL/VC BOT
 
-❍⃕  N O T E
-Bot bebas kalian add ke gc
-Tapi tunggu beberapa menit agar grub
-Agar grub terdaftar di database
 ${readMore}`
 
 	
