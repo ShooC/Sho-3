@@ -3,15 +3,15 @@
 // JANGAN DIHAPUS KALAU MAU DITAMBAHIN
 
 // NUMBER
-global.owner = ['6285607831412'] 
+global.owner = ['6285791268077'] 
 global.mods = [] 
 global.prems = [] 
-global.kontak = ['6285607831412']
+global.kontak = ['6285791268077']
 
 //  INFO BOT 
-global.naown = 'Sho'
-global.noown = '6285607831412'
-global.namebot = 'Slime Bot'
+global.naown = 'raf pedo'
+global.noown = '6285791268077'
+global.namebot = 'raf bot'
 global.nobot = '0'
 
 //  URL SOSMED
@@ -22,9 +22,9 @@ global.web = 'https://chat.whatsapp.com/DbETJDJWKOl16OuICDzHyU' //ubah jadi webs
 global.saweria = 'https://saweria.co'
 
 // PAYMANT 
-global.dana = '085607831412'
+global.dana = '6285791268077'
 global.pulsa = '-'
-global.gopay = '085607831412'
+global.gopay = '6285791268077'
 global.shopay = '-'
 global.ovo = '-'
 
@@ -54,10 +54,10 @@ global.fsizedoc = '99999999999999' // default 10TB
 global.fpagedoc = '999'
 
 // WATERMARK  
-global.wm = '𝕾 𝕷 𝕴 𝕸 𝕰  𝕭 𝕺 𝕿 '
+global.wm = 'R a f   B o t'
 global.watermark = wm
-global.wm2 = '𝖲𝗅𝗂𝗆𝖾 𝖡𝗈𝗍 𝖡𝗒 𝖲𝗁𝗈'
-global.wm3 = '𝔖𝔩𝔦𝔪𝔢 𝔅𝔬𝔱 𝔚𝔥𝔞𝔱𝔰𝔞𝔭𝔭'
+global.wm2 = 'Raf Bot By raf'
+global.wm3 = 'Raff'
 global.tb = 'WHATSAPP BOT MULTI DEVICE'
 
 //  DEFAULT MENU  
@@ -105,7 +105,7 @@ global.salah = 'Salah ❌\n'
 // WATERMARK STICKER 
 global.stiker_wait = '⏰ Sticker sedang di buat'
 global.packname = 'Original Sticker By'
-global.author = 'Slime Bot Whatsapp'
+global.author = 'Raff Bot\n\nDev: Sho'
 
 //  APIKEY ANDA 
 global.lolkey = 'Papah-Chan' //biar mudah ngegantinya semisal apikeynya expired:v
