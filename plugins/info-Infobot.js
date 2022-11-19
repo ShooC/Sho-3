@@ -83,7 +83,7 @@ await conn.sendMessage(m.chat, listMessage, { quoted: m })
 }
 handler.help = ['infobot']
 handler.tags = ['info']
-handler.command = /^(infobot|botinfo)?$/i
+handler.command = /^(infobot|infobot|tentangbot|bot)$/i
 
 module.exports = handler
 
