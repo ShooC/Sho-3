@@ -68,7 +68,7 @@ await conn.sendMessage(m.chat, listMessage, { quoted: m })
 }
 handler.help = ['infobot']
 handler.tags = ['info']
-handler.command = /^(infobot|infobot|tentangbot|bot)$/i
+handler.command = /^(listgame|gamelist|game|menugame)$/i
 
 module.exports = handler
 
