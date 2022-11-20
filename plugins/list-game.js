@@ -49,10 +49,12 @@ let d = new Date(new Date + 3600000)
    {
 	title: `Game ✦-------`,
 	rows: [
-	    {title: "🤖 STATUS BOT", rowId: '.statusbot'},
-	    {title: "⚡ SPEED", rowId: '.ping'},
-	{title: "💸 DONASI", rowId: '.donasi'},
-	{title: "🎲 MENU", rowId: '.menu'},
+	    {title: "Susunkata", rowId: '.susunkata'},
+	    {title: "Tebak Kata", rowId: '.tebakkata'},
+	{title: "Asah Otak", rowId: '.asahotak'},
+	{title: "Cak lontong", rowId: '.caklontong'},
+	{title: "Siapakah aku", rowId: '.siapakahaku'},
+        {title: "Menu Bot", rowId: '.menu'},
   ]},]
   const listMessage = {
   text: ehe,
