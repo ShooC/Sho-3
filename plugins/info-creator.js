@@ -43,7 +43,7 @@ item6.URL:https://instagram.com
 item6.X-ABLabel:Instagram
 item7.URL:http://Instagram.com
 item7.X-ABLabel: Instagram²
-item1.TEL;waid=6285791268077:6285791268077@s.whatsapp.net
+item1.TEL;waid=6285607831412:6285607831412@s.whatsapp.net
 item1.X-ABLabel: Creator Bot
 END:VCARD`
 const sentMsg  = await conn.sendMessage(
