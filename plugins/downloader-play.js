@@ -1,73 +1,78 @@
-const { youtubeSearch, youtubedl, youtubedlv2, youtubedlv3 } =require('@bochilteam/scraper')
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
+const { servers, yta, ytv } = require('../lib/y2mate')
+let yts = require('yt-search')
+let fetch = require('node-fetch')
 let handler = async (m, { conn, command, text, usedPrefix }) => {
-  if (!text) throw `Download audio yt atau play lagu\n\n Contoh pengunaan:${usedPrefix}${command} selamat tinggal\n\nAtau #play (link yt)`
-  await m.reply('Loading Kak')
-  let vid = (await youtubeSearch(text)).video[0]
-  if (!vid) throw 'Tidak di temukan, coba untuk membalikkan judul dan author nya'
-  let { title, description, thumbnail, videoId, durationH, viewH, publishedTime } = vid
-  const url = 'https://www.youtube.com/watch?v=' + videoId
-
-  let captvid = `╭──── 〔 Y O U T U B E 〕 ─⬣
-⬡ Judul: ${title}
-⬡ Durasi: ${durationH}
-⬡ Views: ${viewH}
-⬡ Upload: ${publishedTime}
-⬡ Link: ${vid.url}
-╰────────⬣`
-  conn.sendButtonLoc(m.chat, `╭──── 〔 Y O U T U B E 〕 ─⬣
-⬡ Judul: ${title}
-⬡ Durasi: ${durationH}
-⬡ Views: ${viewH}
-⬡ Upload: ${publishedTime}
-⬡ Link: ${vid.url}
-╰────────⬣`, author.trim(), await( await conn.getFile(thumbnail)).data, ['⛱️Video', `${usedPrefix}getvid ${url} 360`], false, { quoted: m, 'document': { 'url':'https://wa.me/12522518391' },
-'mimetype': global.dpdf,
-'fileName': `Play music 🎶`,
-'fileLength': 666666666666666,
-'pageCount': 666,contextInfo: { externalAdReply: { showAdAttribution: true,
-mediaType:  2,
-mediaUrl: `${url}`,
-title: `Audio Sedang Dikirim...`,
-body: wm,
-sourceUrl: 'http://nekopoi.care', thumbnail: await ( await conn.getFile(thumbnail)).data
-  }
- } 
-})
-  
-  //let buttons = [{ buttonText: { displayText: '📽VIDEO' }, buttonId: `${usedPrefix}ytv ${url} 360` }]
- //let msg = await conn.sendMessage(m.chat, { image: { url: thumbnail }, caption: captvid, footer: author, buttons }, { quoted: m })
-
-  const yt = await await youtubedlv2(url).catch(async _ => await youtubedl(url)).catch(async _ => await youtubedlv3(url))
-const link = await yt.audio['128kbps'].download()
-  let doc = { 
-  audio: 
-  { 
-    url: link 
-}, 
-mimetype: 'audio/mp4', fileName: `${title}`, contextInfo: { externalAdReply: { showAdAttribution: true,
-mediaType:  2,
-mediaUrl: url,
-title: title,
-body: wm,
-sourceUrl: url,
-thumbnail: await(await conn.getFile(thumbnail)).data                                                                     
-                                                                                                                 }
-                       }
+  if (!text) throw `uhm.. cari apa?\n\ncontoh:\n${usedPrefix + command} california`
+  let chat = global.db.data.chats[m.chat]
+  conn.reply(m.chat, '*WAIT! | Mohon Tunggu Sebentar...*', m, {quoted: m, thumbnail: await (await fetch('https://telegra.ph/file/40a2e4c7bf0aff05f62c6.jpg')).buffer(), contextInfo: { externalAdReply: {title: 'Lagi Memuat Data', sourceUrl: 'https://telegra.ph/file/40a2e4c7bf0aff05f62c6.jpg', body: 'Slime Bot Whatsapp', thumbnail: await (await fetch('https://telegra.ph/file/40a2e4c7bf0aff05f62c6.jpg')).buffer(),}}})
+  let results = await yts(text)
+  let vid = results.all.find(video => video.seconds < 3600)
+  if (!vid) throw 'Konten Tidak ditemukan'
+  let isVideo = /2$/.test(command)
+  let yt = false
+  let yt2 = false
+  let usedServer = servers[0]
+  for (let i in servers) {
+    let server = servers[i]
+    try {
+      yt = await yta(vid.url, server)
+      yt2 = await ytv(vid.url, server)
+      usedServer = server
+      break
+    } catch (e) {
+      m.reply(`Server ${server} error!${servers.length >= i + 1 ? '' : '\nmencoba server lain...'}`)
+    }
   }
 
-  return conn.sendMessage(m.chat, doc, { quoted: m })
-	// return conn.sendMessage(m.chat, { document: { url: link }, mimetype: 'audio/mpeg', fileName: `${title}.mp3`}, { quoted: m})
-	// return await conn.sendFile(m.chat, link, title + '.mp3', '', m, false, { asDocument: true })
+  if (yt === false) throw 'semua server gagal'
+  if (yt2 === false) throw 'semua server gagal'
+  let { dl_link, thumb, title, filesize, filesizeF } = yt
+    const ftrol = {
+    key : {
+    remoteJid: 'status@broadcast',
+    participant : '0@s.whatsapp.net'
+    },
+    message: {
+    orderMessage: {
+    itemCount : 2022,
+    status: 1,
+    surface : 1,
+    message: `❏ PLAY YOUTUBE`, 
+    orderTitle: `▮Menu ▸`,
+    thumbnail: await (await fetch('https://telegra.ph/file/191d62cce1698914363cc.jpg')).buffer(), //Gambarnye
+    sellerJid: '0@s.whatsapp.net' 
+    }
+    }
+    }
+  await conn.send3ButtonImg(m.chat, await (await fetch(thumb)).buffer(), `
+┏┉⌣ ┈̥-̶̯͡..̷̴✽̶┄┈┈┈┈┈┈┈┈┈┈┉┓
+┆ *PLAY YOUTUBE*
+└┈┈┈┈┈┈┈┈┈┈┈⌣ ┈̥-̶̯͡..̷̴✽̶⌣ ✽̶
+
+*📁 Judul:* ${title}
+*🎶 Audio:* ${filesizeF}
+*🎥 Video:* ${yt2.filesizeF}
+*💻 Server y2mate:* ${usedServer}
+`.trim(), wm2, `🎧️ Audio`, `.yta ${vid.url}`, `🎥 Video`, `.yt ${vid.url}`, '🔎 Cari di youtube', `.yts ${title}`, ftrol, {
+    contextInfo: { forwardingScore: 99999, isForwarded: true,
+        externalAdReply: {
+            title: ' ꕥ─────•「 Slime ▶︎ Botz 」•─────ꕥ', 
+            body: 'Apa benar ini yang anda cari?',
+            description: 'Apa benar ini yang anda cari?',
+            mediaType: 2,
+          thumbnail: await (await fetch('https://telegra.ph/file/191d62cce1698914363cc.jpg')).buffer(),
+         mediaUrl: `https://chat.whatsapp.com/L6b4QjsMpgn8vpecqZltBe`
+        }
+     }
+    })
 }
 handler.help = ['play'].map(v => v + ' <pencarian>')
 handler.tags = ['downloader']
-handler.command = /^yt(a(udio)?|mp3|musik|lagu|play)$/i
+handler.command = /^(p|play)$/i
 
 handler.exp = 0
-handler.limit = true
 
 module.exports = handler
 
-function pickRandom(list) {
-  return list[Math.floor(list.length * Math.random())]
-}
+let wm = global.botwm
