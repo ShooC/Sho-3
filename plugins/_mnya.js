@@ -262,7 +262,7 @@ let levelling = require('../lib/levelling')
     itemCount : 999,
     status: 1,
     surface : 1,
-    message: '[❗] Memuat Menu ' + teks + '...',
+    message: '[🦕] Memuat Menu ' + teks + '...',
     orderTitle: `▮Menu ▸`,
     thumbnail: await (await fetch('https://telegra.ph/file/e6c498c568fd8d35f9395.jpg')).buffer(), //Gambarnye
     sellerJid: '0@s.whatsapp.net' 
@@ -279,7 +279,7 @@ let levelling = require('../lib/levelling')
     itemCount : 2022,
     status: 1,
     surface : 1,
-    message: `RullBot-MD By Rull`, 
+    message: `Slime Bot By sho`, 
     orderTitle: `▮Menu ▸`,
     thumbnail: await (await fetch('https://telegra.ph/file/db5b4aed0d6d2e6c10c8f.jpg')).buffer(), //Gambarnye
     sellerJid: '0@s.whatsapp.net' 
@@ -314,10 +314,10 @@ let levelling = require('../lib/levelling')
        } 
      }) 
      if (teks == '404') {
- 	let cute = `${pickRandom(['https://telegra.ph/file/c4c3f666673ad816d4813.jpg', 'https://telegra.ph/file/c4c3f666673ad816d4813.jpg', 'https://telegra.ph/file/c4c3f666673ad816d4813.jpg', 'https://telegra.ph/file/c4c3f666673ad816d4813.jpg', 'https://telegra.ph/file/c4c3f666673ad816d4813.jpg', 'https://telegra.ph/file/c4c3f666673ad816d4813.jpg', 'https://telegra.ph/file/c4c3f666673ad816d4813.jpg', 'https://telegra.ph/file/c4c3f666673ad816d4813.jpg', 'https://telegra.ph/file/c4c3f666673ad816d4813.jpg'])}` 
- 	let ori = `Hi Kak, @${m.sender.split`@`[0]}
+ 	/*let cute = `${pickRandom(['https://telegra.ph/file/c4c3f666673ad816d4813.jpg', 'https://telegra.ph/file/c4c3f666673ad816d4813.jpg', 'https://telegra.ph/file/c4c3f666673ad816d4813.jpg', 'https://telegra.ph/file/c4c3f666673ad816d4813.jpg', 'https://telegra.ph/file/c4c3f666673ad816d4813.jpg', 'https://telegra.ph/file/c4c3f666673ad816d4813.jpg', 'https://telegra.ph/file/c4c3f666673ad816d4813.jpg', 'https://telegra.ph/file/c4c3f666673ad816d4813.jpg', 'https://telegra.ph/file/c4c3f666673ad816d4813.jpg'])}` 
+ 	let ori = `Hi Kak, @${m.sender.split`@`[0]}*/
  
-Saya Adalah RullBot-MD Salah Satu Bot Whatsapp Yang Siap Membantu Kamu Mempermudah Sesuatu Seperti Membuat Sticker Dan Lainnya, Kalo Kamu Mau Request Fitur Silahkan Ketik #request Pesan Atau Fitur Yang Kamu Inginkan!`
+Saya Adalah Slime bot Salah Satu Bot Whatsapp Yang Siap Membantu Kamu Mempermudah Sesuatu Seperti Membuat Sticker Dan Lainnya, Kalo Kamu Mau Request Fitur Silahkan Ketik #request Pesan Atau Fitur Yang Kamu Inginkan!`
 conn.sendMessage(m.chat, {
     	react: {
     		text: emot,
