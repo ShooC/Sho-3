@@ -8,7 +8,7 @@ let handler = async (m, { conn, text }) => {
 }
 handler.help = ['join <chat.whatsapp.com>']
 handler.tags = ['premium']
-
 handler.command = /^join$/i
+hander.premium = true
 
 module.exports = handler
