@@ -10,11 +10,10 @@ handler.all = async function (m) {
     if (new Date - user.pc < 86400000) return // setiap 24 jam sekali
     await this.sendBut(m.chat, `
 Hello, ${ucapan()}
-╭───────────────╮
-        Saya Slime Bot
-        Salah satu Bot di whatsapp
-╰───────────────╯
-Hello user budayakan tidak spam bot
+Saya Slime Bot
+
+Salah satu Bot di whatsapp
+Hai user bot budayakan tidak spam bot
 Bot akan aktif 24jam jika kalian donasi
 ${user.banned ? 'kamu dibanned' : 'Bot akan membantu kalian download apapun'}
 `.trim(), '⫹⫺ Welcome Private Massege', user.banned ? 'Pemilik Bot' : 'Menu', user.banned ? '.owner' : '.menu', m)
