@@ -7,8 +7,8 @@ handler.all = async function (m) {
     this.spam = this.spam ? this.spam : {}
     if (m.sender in this.spam) {
         this.spam[m.sender].count++
-        if (m.messageTimestamp.toNumber() - this.spam[m.sender].lastspam > 10) {
-            if (this.spam[m.sender].count > 10) {
+        if (m.messageTimestamp.toNumber() - this.spam[m.sender].lastspam > 5) {
+            if (this.spam[m.sender].count > 5) {
                 db.data.users[m.sender].banned = true
                 await this.sendButton(m.chat, `Kamu dibanned karena spam!`, wm, 'Creator', '.owner', m)
                 await this.sendButton(global.owner[0], `*spam*\n\n@${m.sender.split`@`[0]}`, wm, 'unban', '.unban ' + m.sender.split`@`[0])
